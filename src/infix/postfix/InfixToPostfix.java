@@ -8,6 +8,8 @@ public class InfixToPostfix {
         String postfix = "";
         Stack<Character> stack = new Stack<>();
         stack.push('(');
+        infixString = infixString.concat(""+')');
+
 
 
     }
