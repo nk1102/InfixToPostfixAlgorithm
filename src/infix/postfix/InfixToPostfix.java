@@ -1,5 +1,6 @@
 package infix.postfix;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Stack;
 
 public class InfixToPostfix {
@@ -9,6 +10,13 @@ public class InfixToPostfix {
         Stack<Character> stack = new Stack<>();
         stack.push('(');
         infixString = infixString.concat(""+')');
+        for (int i = 0; i <infixString.length() ; i++) {
+            char character = infixString.charAt(i);
+
+
+            }
+
+        }
 
 
 
