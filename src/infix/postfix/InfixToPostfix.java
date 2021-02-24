@@ -1,6 +1,7 @@
 package infix.postfix;
 
 import java.util.Stack;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 public class InfixToPostfix {
     public String infixToPostfix(String infixString) {
@@ -11,7 +12,17 @@ public class InfixToPostfix {
 
 
     }
-    private boolean isOperator(char Character){
+    private boolean isOperator(char character){
      boolean response = false;
+        switch (character){
+            case '^':
+            case '/':
+            case '*':
+            case'+':
+            case'-':
+                response = true;
+
+        }
+        return response;
     }
 }
