@@ -22,6 +22,13 @@ public class InfixToPostfix {
             }
             else if (isOperator(character)){
                 if (stack.peek()!='('){
+                    while (!stack.isEmpty()){
+                        if (precendence(stack.peek())>=precendence(character)){
+                            postfix=postfix.concat(""+stack.pop());
+
+                        }
+
+                    }
 
                 }
 
