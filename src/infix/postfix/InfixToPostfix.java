@@ -17,6 +17,9 @@ public class InfixToPostfix {
 
 
             }
+            else if (character=='('){
+                stack.push(character);
+            }
 
         }
 
