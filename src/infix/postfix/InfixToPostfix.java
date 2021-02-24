@@ -21,6 +21,9 @@ public class InfixToPostfix {
                 stack.push(character);
             }
             else if (isOperator(character)){
+                if (stack.peek()!='('){
+
+                }
 
             }
 
