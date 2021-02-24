@@ -12,6 +12,8 @@ public class InfixToPostfix {
         infixString = infixString.concat(""+')');
         for (int i = 0; i <infixString.length() ; i++) {
             char character = infixString.charAt(i);
+            if (Character.isAlphabetic(character)){
+                postfix=postfix.concat(""+ character);
 
 
             }
