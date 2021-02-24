@@ -11,4 +11,7 @@ public class InfixToPostfix {
 
 
     }
+    private boolean isOperator(char Character){
+
+    }
 }
