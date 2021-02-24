@@ -12,8 +12,8 @@ public class InfixToPostfix {
         infixString = infixString.concat("" + ')');
         for (int i = 0; i < infixString.length(); i++) {
             char character = infixString.charAt(i);
-            if (Character.isAlphabetic(character)) {
-                postfix = postfix.concat("" + character);
+            if (Character.isAlphabetic(character) || Character.isDigit(character)) {
+                postfix = postfix.concat(String.valueOf(character));
 
 
             } else if (character == '(') {
@@ -22,7 +22,7 @@ public class InfixToPostfix {
                 if (stack.peek() != '(') {
                     while (!stack.isEmpty()) {
                         if (precendence(stack.peek()) >= precendence(character)) {
-                            postfix = postfix.concat("" + stack.pop());
+                            postfix = postfix.concat(String.valueOf(stack.pop()));
 
                         } else {
                             stack.push(character);
@@ -39,10 +39,11 @@ public class InfixToPostfix {
             else if (character==')'){
                 while(!stack.isEmpty()){
                     if (stack.peek()!='('){
-                        postfix = postfix.concat(""+stack.pop());
+                        postfix = postfix.concat(String.valueOf(stack.pop()));
                     }
                     else {
                         stack.pop();
+                        break;
                     }
                 }
             }
