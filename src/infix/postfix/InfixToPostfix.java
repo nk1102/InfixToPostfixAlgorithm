@@ -28,6 +28,17 @@ public class InfixToPostfix {
 
     private int precendence(char operator) {
         int response = 0;
+        switch (operator){
+            case'^':
+                response=3;
+            case'/':
+            case'*':
+                response=2;
+                break;
+            case'+':
+            case'-':
+                response=1;
+        }
 
 
     }
