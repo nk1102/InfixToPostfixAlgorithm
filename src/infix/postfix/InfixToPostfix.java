@@ -21,18 +21,28 @@ public class InfixToPostfix {
                 stack.push(character);
             }
             else if (isOperator(character)){
-                if (stack.peek()!='('){
-                    while (!stack.isEmpty()){
-                        if (precendence(stack.peek())>=precendence(character)){
-                            postfix=postfix.concat(""+stack.pop());
+                if (stack.peek()!='(') {
+                    while (!stack.isEmpty()) {
+                        if (precendence(stack.peek()) >= precendence(character)) {
+                            postfix = postfix.concat("" + stack.pop());
 
+                        } else {
+                            stack.push(character);
+                            break;
                         }
 
                     }
+                }
+                    else {
+                        stack.push(character);
+                }
+
+
 
                 }
 
             }
+
 
         }
 
