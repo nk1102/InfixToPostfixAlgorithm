@@ -25,4 +25,7 @@ public class InfixToPostfix {
         }
         return response;
     }
+    private int precendence(char operator){
+
+    }
 }
