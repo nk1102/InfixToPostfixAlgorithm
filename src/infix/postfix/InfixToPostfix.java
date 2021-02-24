@@ -20,6 +20,9 @@ public class InfixToPostfix {
             else if (character=='('){
                 stack.push(character);
             }
+            else if (isOperator(character)){
+
+            }
 
         }
 
