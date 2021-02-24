@@ -9,19 +9,17 @@ public class InfixToPostfix {
         String postfix = "";
         Stack<Character> stack = new Stack<>();
         stack.push('(');
-        infixString = infixString.concat(""+')');
-        for (int i = 0; i <infixString.length() ; i++) {
+        infixString = infixString.concat("" + ')');
+        for (int i = 0; i < infixString.length(); i++) {
             char character = infixString.charAt(i);
-            if (Character.isAlphabetic(character)){
-                postfix=postfix.concat(""+ character);
+            if (Character.isAlphabetic(character)) {
+                postfix = postfix.concat("" + character);
 
 
-            }
-            else if (character=='('){
+            } else if (character == '(') {
                 stack.push(character);
-            }
-            else if (isOperator(character)){
-                if (stack.peek()!='(') {
+            } else if (isOperator(character)) {
+                if (stack.peek() != '(') {
                     while (!stack.isEmpty()) {
                         if (precendence(stack.peek()) >= precendence(character)) {
                             postfix = postfix.concat("" + stack.pop());
@@ -32,23 +30,30 @@ public class InfixToPostfix {
                         }
 
                     }
-                }
-                    else {
-                        stack.push(character);
+                } else {
+                    stack.push(character);
                 }
 
-
-
-                }
 
             }
-
+            else if (character==')'){
+                while(!stack.isEmpty()){
+                    if (stack.peek()!='('){
+                        postfix = postfix.concat(""+stack.pop());
+                    }
+                    else {
+                        stack.pop();
+                    }
+                }
+            }
 
         }
-
+        return postfix;
 
 
     }
+
+
 
     private boolean isOperator(char character) {
         boolean response = false;
@@ -77,6 +82,7 @@ public class InfixToPostfix {
             case'-':
                 response=1;
         }
+        return response;
 
 
     }
